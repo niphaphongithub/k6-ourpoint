@@ -3,7 +3,7 @@ import { sleep } from "k6";
 import { getTokenFromStaff } from "../support/helperOwner.js";
 import { stages, thresholds, thinktime1, thinktime2 } from "./common.js";
 import { envOwner, api_version } from "../config/alpha.js";
-import { addPointdata } from "../fixture/addPointdata.js";
+import { addPointdata } from "../fixture/data_test/addPointdata.js";
 
 export let options = {
   stages: stages,

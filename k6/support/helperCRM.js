@@ -1,6 +1,6 @@
 import http from "k6/http";
 import { envCRM , api_version } from "../config/alpha.js";
-import { loginCRMdata } from "../fixture/loginCRMdata.js";
+import { loginCRMdata } from "../fixture/data_test/loginCRMdata.js";
 
 export function getTokenFromLoginMember() {
   let url = `${envCRM.baseURL}/${api_version.v4}/member`;

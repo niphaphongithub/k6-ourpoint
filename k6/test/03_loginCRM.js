@@ -2,7 +2,7 @@ import http from "k6/http";
 import { sleep } from "k6";
 import { stages , thresholds , thinktime1 , thinktime2 } from "./common.js";
 import { envCRM , api_version } from "../config/alpha.js";
-import { loginCRMdata } from "../fixture/loginCRMdata.js";
+import { loginCRMdata } from "../fixture/data_test/loginCRMdata.js";
 
 export let options = {
   stages: stages,

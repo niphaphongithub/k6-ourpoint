@@ -3,7 +3,7 @@ import { sleep } from "k6";
 import { getTokenFromShopDetail } from "../support/helperCRM.js"
 import { stages , thresholds , thinktime1 , thinktime2 } from "./common.js";
 import { envCRM , api_version } from "../config/alpha.js";
-import { redeemCupondata } from "../fixture/redeemCuponData.js";
+import { redeemCupondata } from "../fixture/data_test/redeemCupondata.js";
 
 export let options = {
   stages: stages,

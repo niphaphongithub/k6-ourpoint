@@ -1,7 +1,7 @@
 import http from "k6/http";
 import { sleep } from "k6";
 import { envOwner , api_version } from "../config/alpha.js";
-import { loginOwnerdata } from "../fixture/loginOwnerdata.js";
+import { loginOwnerdata } from "../fixture/data_test/loginOwnerdata.js";
 
 export function getTokenFromSignIn() {
     let url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${envOwner.key}`
