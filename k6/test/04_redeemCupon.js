@@ -10,10 +10,15 @@ export let options = {
   thresholds: thresholds,
 };
 
+export let token = ""
 
 export default function () {
   let url = `${envCRM.baseURL}/${api_version.v5}/coupons`;
-  let token = getTokenFromShopDetail();
+ 
+  if (!token) {
+    // get new token
+    token = getTokenFromShopDetail();
+  }
   let payload = redeemCupondata
 
   let headers = {
@@ -25,7 +30,11 @@ export default function () {
 
   if (res.status === 200) {
     console.log("Request successful");
-  } else {
+  } else if (res.status === 401) {
+    // get new token
+    token = getTokenFromShopDetail();
+  }
+  else {
     console.log(`Request failed with status code: ${res.status}`);
   }
   console.log("Response body:", res.body);

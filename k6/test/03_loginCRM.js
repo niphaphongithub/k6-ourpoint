@@ -9,6 +9,7 @@ export let options = {
   thresholds: thresholds,
 };
 
+
 export default function () {
     let url = `${envCRM.baseURL}/${api_version.v4}/member`;
     let payload = loginCRMdata
@@ -27,5 +28,5 @@ export default function () {
       console.log(`Request failed with status code: ${res.status}`);
     }
   
-    sleep(thinktime2 );
+    sleep(thinktime2);
   }

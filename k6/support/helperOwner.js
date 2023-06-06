@@ -1,4 +1,5 @@
 import http from "k6/http";
+import { sleep } from "k6";
 import { envOwner , api_version } from "../config/alpha.js";
 import { loginOwnerdata } from "../fixture/loginOwnerdata.js";
 
@@ -16,9 +17,12 @@ export function getTokenFromSignIn() {
         const responseBody = JSON.parse(res.body);
         // console.log(responseBody.idToken);
         return responseBody.idToken;
+        
       } else {
         console.log(`Request failed with status code: ${res.status}`);
       }
+
+      sleep(1);
 }
 
 export function getTokenFromStaff() {
@@ -39,4 +43,6 @@ export function getTokenFromStaff() {
       } else {
         console.log(`Request failed with status code: ${res.status}`);
       }
+
+      sleep(1);
 }
