@@ -12,8 +12,13 @@ export let options = {
 
 export let token = "";
 
+const user_id_random = JSON.parse(open('../fixture/userID.json'));
+
 export default function () {
-  let url = `${envOwner.baseURL}/${api_version.v4}/members/85043/points/add`;
+  const user_id = JSON.stringify(user_id_random[__VU % user_id_random.length]);
+  console.log(user_id)
+  let url = `${envOwner.baseURL}/${api_version.v4}/members/${user_id}/points/add`;
+  // console.log(url)
 
   if (!token) {
     // get new token

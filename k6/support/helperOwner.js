@@ -15,7 +15,7 @@ export function getTokenFromSignIn() {
 
       if (res.status === 200) {
         const responseBody = JSON.parse(res.body);
-        console.log(responseBody.idToken);
+        // console.log(responseBody.idToken);
         return responseBody.idToken;
         
       } else {
@@ -38,7 +38,7 @@ export function getTokenFromStaff() {
 
       if (res.status === 200) {
         const responseBody = JSON.parse(res.body);
-        console.log(responseBody.data.item.jwt.accessToken);
+        // console.log(responseBody.data.item.jwt.accessToken);
         return responseBody.data.item.jwt.accessToken
       } else {
         console.log(`Request failed with status code: ${res.status}`);

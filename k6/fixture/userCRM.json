@@ -1,0 +1,54 @@
+[
+    {
+        "code": "1234",
+        "country": {
+            "id": 218,
+            "code": "+66",
+            "name": "Thailand",
+            "alpha": "TH",
+            "flag_alpha": "TH",
+            "currency": "THB"
+        },
+        "phoneNumber": "0999999999",
+        "shopId": 4196
+    },
+    {
+        "code": "1234",
+        "country": {
+            "id": 218,
+            "code": "+66",
+            "name": "Thailand",
+            "alpha": "TH",
+            "flag_alpha": "TH",
+            "currency": "THB"
+        },
+        "phoneNumber": "0999999997",
+        "shopId": 4196
+    },
+    {
+        "code": "1234",
+        "country": {
+            "id": 218,
+            "code": "+66",
+            "name": "Thailand",
+            "alpha": "TH",
+            "flag_alpha": "TH",
+            "currency": "THB"
+        },
+        "phoneNumber": "0999999998",
+        "shopId": 4196
+    },
+    {
+        "code": "1234",
+        "country": {
+            "id": 218,
+            "code": "+66",
+            "name": "Thailand",
+            "alpha": "TH",
+            "flag_alpha": "TH",
+            "currency": "THB"
+        },
+        "phoneNumber": "0999999996",
+        "shopId": 4196
+    }
+]

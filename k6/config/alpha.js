@@ -6,7 +6,6 @@ export const envOwner = {
 
 export const envCRM = {
     baseURL : "https://alpha-mycrm-api.line-apps-alpha.com" ,
-    uid : "HowYxEQS2VNto4FbRk3wBl3Jc9O2",
     key : "AIzaSyC19yGUE7LxaSLOHUXwNRNwXtRh6wFkhvQ",
 }
 

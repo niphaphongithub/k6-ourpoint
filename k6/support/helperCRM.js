@@ -2,9 +2,12 @@ import http from "k6/http";
 import { envCRM, api_version } from "../config/alpha.js";
 import { loginCRMdata } from "../fixture/data_test/loginCRMdata.js";
 
+const payloads = JSON.parse(open("../fixture/userCRM.json"));
+
 export function getTokenFromLoginMember() {
   let url = `${envCRM.baseURL}/${api_version.v4}/member`;
-  let payload = loginCRMdata;
+  const payload = payloads[__VU % payloads.length];
+  // console.log(payload);
   let headers = {
     "Content-Type": "application/json",
   };
@@ -45,7 +48,7 @@ export function getTokenFromSigninCustomer() {
 export function getUID() {
   let url = `https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${envCRM.key}`;
   let login_token = getTokenFromSigninCustomer();
-  console.log(login_token)
+  // console.log(login_token);
   let payload = {
     idToken: login_token,
   };
@@ -57,7 +60,7 @@ export function getUID() {
   let res = http.post(url, JSON.stringify(payload), { headers: headers });
   if (res.status === 200) {
     const responseBody = JSON.parse(res.body);
-    console.log(responseBody.users[0].localId);
+    // console.log(responseBody.users[0].localId);
     return responseBody.users[0].localId;
   } else {
     console.log(`Request failed with status code: ${res.status}`);
@@ -66,7 +69,7 @@ export function getUID() {
 
 export function getTokenFromShopDetail() {
   let user_uid = getUID();
-  console.log(user_uid);
+  // console.log(user_uid);
   let url = `${envCRM.baseURL}/member/${api_version.v3}/detail?shop_id=4196&uid=${user_uid}`;
 
   let token = getTokenFromSigninCustomer();
@@ -79,7 +82,7 @@ export function getTokenFromShopDetail() {
 
   if (res.status === 200) {
     const responseBody = JSON.parse(res.body);
-    console.log(responseBody.data.item.access_token);
+    // console.log(responseBody.data.item.access_token);
     return responseBody.data.item.access_token;
   } else {
     console.log(`Request failed with status code: ${res.status}`);
