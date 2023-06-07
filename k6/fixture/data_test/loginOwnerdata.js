@@ -1,5 +1,5 @@
 export const loginOwnerdata = {
-    email : "QAOurpoint@gmail.com",
+    email : "qaourpoint@gmail.com",
     password : "Qa123456",
     returnSecureToken : true
 }
