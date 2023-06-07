@@ -37,7 +37,7 @@ export default function () {
   else {
     console.log(`Request failed with status code: ${res.status}`);
   }
-  // console.log("Response body:", res.body);
+  console.log("Response body:", res.body);
 
   sleep(thinktime2);
 }

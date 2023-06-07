@@ -1,0 +1,12 @@
+[
+    {
+        "email" : "qaourpoint@gmail.com",
+        "password" : "Qa123456",
+        "returnSecureToken" : true
+    },
+    {
+        "email" : "qaourpoint2@gmail.com",
+        "password" : "Qa123456",
+        "returnSecureToken" : true
+    }
+]

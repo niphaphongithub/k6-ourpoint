@@ -1,6 +1,5 @@
 import http from "k6/http";
 import { envCRM, api_version } from "../config/alpha.js";
-import { loginCRMdata } from "../fixture/data_test/loginCRMdata.js";
 
 const payloads = JSON.parse(open("../fixture/userCRM.json"));
 
