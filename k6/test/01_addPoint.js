@@ -101,6 +101,8 @@ export default function () {
     Authorization: `Bearer ${token}`,
   };
 
+  sleep(thinktime2);
+
   let res = http.post(url, JSON.stringify(payload), { headers: headers });
 
   if (res.status === 200) {
