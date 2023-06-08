@@ -36,13 +36,15 @@ export function getShopID() {
   sleep(1);
 }
 
-export function getMemberListID() {
+export function getMemberID() {
 let token = "";
 
 let shopId = getShopID()
 
+let position = Math.floor(Math.random() * 10);
+
 let url =
-  `https://alpha-mycrm-api.line-apps-alpha.com/v4/shops/${shopId}/actions/list-members`;
+  `${envOwner.baseURL}/${api_version.v4}/shops/${shopId}/actions/list-members`;
 
 if (!token) {
   // get new token
@@ -70,24 +72,22 @@ let res = http.post(url, JSON.stringify(payload), { headers: headers });
 if (res.status === 200) {;
   const responseBody = JSON.parse(res.body);
   // console.log(responseBody.data.items.members[0].id);
-  return responseBody.data.items.members[0].id;
+  return responseBody.data.items.members[position].id;
 } else if (res.status === 401) {
   // get new token
   token = getTokenFromStaff();
 } else {
   console.log(`Request failed with status code: ${res.status}`);
 }
-//   console.log("Response body:", res.body);
 
 sleep(1);
 }
 
 export default function () {
-  let user_id = getMemberListID()
+  let user_id = getMemberID()
   let shop_id =  getShopID()
   console.log("shop ID : " ,shop_id," and user ID : " ,user_id)
   let url = `${envOwner.baseURL}/${api_version.v4}/members/${user_id}/points/add`;
-  // console.log(url)
 
   if (!token) {
     // get new token

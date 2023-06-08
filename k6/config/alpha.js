@@ -1,6 +1,5 @@
 export const envOwner = {
     baseURL : "https://alpha-mycrm-api.line-apps-alpha.com" ,
-    uid : "Yivoaj8PPPeeLj39ZEL6roeQvSR2",
     key : "AIzaSyC19yGUE7LxaSLOHUXwNRNwXtRh6wFkhvQ"
 }
 
